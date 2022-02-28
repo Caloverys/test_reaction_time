@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+<head>
+  <meta charset="utf-8">
+  <title>starting_page</title>
+  <style>
+    body {
+      background: linear-gradient(to right, transparent 33%, rgba(255, 255, 255, 0.5) 50%, transparent 66%), linear-gradient(75deg, rebeccapurple 25%, skyblue 50%, pink);
+      background-size: 300% 100%, auto;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      animation: animatecolor 2s infinite forwards;
+    }
+    
+    @keyframes animatecolor {
+      from {
+        background-position: right
+      }
+      to {
+        background-position: left;
+      }
+    }
+    
+    @keyframes changecolor {
+      from {
+        color: orangered;
+      }
+      20% {
+        color: yellow;
+      }
+      40% {
+        color: red;
+      }
+      60% {
+        color: blue;
+      }
+      80% {
+        color: purple;
+      }
+      to {
+        color: orangered;
+      }
+    }
+    
+    @keyframes appearin {
+      from {
+        transform: translateX(-100%);
+        letter-spacing: 0.5em;
+        opacity: 0.3;
+      }
+      to {
+        transform: translateX(0%);
+        letter-spacing: normal;
+        opacity: 1;
+      }
+    }
+    
+    body {
+      user-select: none;
+    }
+    
+    h1 {
+      color: orangered;
+      text-shadow: 1px 1px 0px pink, -3px -0 25px purple, 3px 0px 3px white, 0px 0px 15px white, 15px 10px 10px orange, 0 0 50px blue, 0 0 50px blue, 0 0 70px blue, 0 0 90px blue, 0 0 90px blue, 0 0 100px blue, 0 0 150px blue;
+      animation: changecolor 5s infinite linear, appearin 1.5s forwards;
+      font-size: 4.5em;
+      font-family: cursive;
+      text-align: center;
+      margin-top: calc(15vh);
+    }
+    
+    div {
+      /*Note that internet explorer doesn't support this*/
+      display: grid;
+      place-items: center;
+    }
+    
+    div>button {
+      border: 4px solid black;
+      background-color: transparent;
+      font-size: 1.6em;
+      text-align: center;
+      width: 200px;
+      height: 60px;
+      padding: 10px 60px 10px 60px;
+      position: fixed;
+      top: calc(50vh - 40px);
+      font-weight: bolder;
+      font-style: italic;
+    }
+    
+    button:hover {
+      width: 400px;
+      background-color: black;
+      color: white;
+      transition: width 0.3s linear;
+    }
+    
+    button:active {
+      color: grey;
+    }
+    
+    p {
+      animation: appear 1s linear 1;
+    }
+    
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test your reaction~</h1>
+  <p>Hello</p>
+  <div>
+    <button id=typebutton onclick="window.location.replace('test_reaction_time.html')">Start</button>
+  </div>
+</body>
