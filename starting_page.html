@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+<!--
+<body>
+<script>
+    var a = 0;
+    console.log(a)
+    function check(){
+        a = 5;
+         var a = 4;
+        console.log(a);
 
+    }
+    check()
+    console.log(a)
+    a = 4;
+    console.log(a)
+
+
+</script>
+</body>
+</html>
+-->
 <head>
   <meta charset="utf-8">
   <title>starting_page</title>
   <style>
     body {
-      background: linear-gradient(to right, transparent 33%, rgba(255, 255, 255, 0.5) 50%, transparent 66%), linear-gradient(75deg, rebeccapurple 25%, skyblue 50%, pink);
+      background: linear-gradient(to right, transparent 33%, rgba(255, 255, 255, 0.5) 50%, transparent 66%), linear-gradient(75deg, rgba(102,51,153,0.8) 15%, skyblue 55%, pink);
       background-size: 300% 100%, auto;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -76,7 +96,7 @@
       place-items: center;
     }
     
-    div>button {
+    div > button {
       border: 4px solid black;
       background-color: transparent;
       font-size: 1.6em;
@@ -101,7 +121,7 @@
       color: grey;
     }
     
-    p {
+    .appear{
       animation: appear 1s linear 1;
     }
     
@@ -122,4 +142,15 @@
   <div>
     <button id=typebutton onclick="window.location.replace('test_reaction_time.html')">Start</button>
   </div>
+  <script>
+      const p = document.querySelector('p')
+      value = p.innerText.split('')
+      times = 0;
+      p.textContent = ""
+      const interval = setInterval(function(){
+         times === value.length ? window.clearInterval(interval) : p.insertAdjacentHTML('beforeend',`<span class='appear'>${value[times]}</span>`)
+         times++
+      },200)
+
+  </script>
 </body>
